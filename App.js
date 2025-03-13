@@ -5,10 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 function HomeScreen({ navigation }) {
   return (
-    <ScrollView style={styles.scroll} 
-    contentContainerStyle={styles.content}
-    showsVerticalScrollIndicator={false}>
-      <Text style={styles.titulo}>Tech Woman's</Text>
+    <ScrollView contentContainerStyle={styles.content}>
+      <Image 
+        style={styles.logo} 
+        source={require('./assets/logo.png')} 
+      />
+      <Text style={styles.titulo}>Tech Woman's ♀️</Text>
       <Text style={styles.titulo2}>O Futuro da TI é feminino</Text>
 
       <Pressable style={styles.pressable} onPress={() => navigation.navigate('Conheça Margaret Hamilton')}>
@@ -18,6 +20,7 @@ function HomeScreen({ navigation }) {
         />
         <Text style={styles.nomes}>Margaret Hamilton</Text>
       </Pressable>
+
       <Pressable style={styles.pressable} onPress={() => navigation.navigate('Conheça Grace Hopper')}>
         <Image 
           style={styles.imgMulheres} 
@@ -60,7 +63,7 @@ function HomeScreen({ navigation }) {
 function MargaretHamiltonScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
-
+      
     </ScrollView>
   );
 }
@@ -124,46 +127,60 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  scroll: {
-    backgroundColor: '#fff',
-  },
   content: {
+    backgroundColor: '#e12f70',
     flexGrow: 1,
-    minHeight: '100%',
     alignItems: 'center',
     padding: 20,
+    height: '135%',
   },
   titulo: {
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center',
+    color: 'white',
+    marginTop: -90,
+    marginLeft: 45,
+    fontFamily: ''
   },
   titulo2: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 40,
+    color: 'white',
+    marginLeft: 100,
   },
   pressable: {
-    backgroundColor: '#E12F58',
+    backgroundColor: '#fff',
+    color: '#000',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 10,
     marginVertical: 10,
     width: '90%',
-    alignSelf: 'center',
     shadowColor: '#000',
     shadowOpacity: 0.7,
-    shadowRadius: 2,
+    shadowRadius: 8,
     elevation: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   nomes: {
-    color: '#fff',
-    textAlign: 'center',
+    color: '#000',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 20,
   },
   imgMulheres: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginBottom: 10,
-    alignSelf: 'center',
+    width: 90,
+    height: 90,
+    borderRadius: '100%',
+  },
+  logo: {
+    width: 95,
+    height: 95,
+    marginBottom: 20,
+    borderRadius: '200%',
+    marginRight: 230,
+    borderColor: '#fff',
+    borderWidth: 2,
   }
 });
